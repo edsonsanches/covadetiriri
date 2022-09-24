@@ -1,0 +1,15 @@
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;}
+
+.product{display: inline-block; width: 20%;margin: 10px 2.5%;box-shadow: 0 5px 20px #ccc;}
+    .product_title{width: 100%;background: #333;padding: 10px;color: #fff;font-weight: bold;text-align: center;}
+    .product_image{padding: 10px 40px;}
+    .product_image img{max-width: 100%;}
+    .product_desc{font-size: 16px; text-align: center;}
+    .product_btn{text-align: center;}
+    .product__list table{width: 80%; margin: 30px 10%; text-align: center;}
+    .product__list table thead tr{background: #333; font-weight: bold; color: #fff;}
+    .product__list thead td{padding: 7px 0;}
+
+.banner img{width: 100%; vertical-align: middle;}
+
+.carrinho{width: 100%; margin-bottom: 30px; background: #333333; color:#fff; font-weight: bold; padding: 10px 5%; text-align: center;}
