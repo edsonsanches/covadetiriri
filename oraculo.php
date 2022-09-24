@@ -35,68 +35,23 @@ $selecionaWhats=mysqli_query($conexao, "select * from config where id_config=6")
 
 </div>
 
-
-<form style="padding: 20px" action="FinalizarAgendamentoOraculo.php" method="post" data-toggle="validator" role="form">
-                   
-                   <div class="form-group">
-                          <?php 
-                          
-                      include("BD/conecta.php");
-    				  $diaatual=date('d');
-    				  $mesatual=date('m');
-    				  $anoatual=date('Y');
-
-                    $selecionaGiras=mysqli_query($conexao, "select * from oraculo where mes>=$mesatual and ano>=$anoatual");
-                          
-                         ?> <label class="control-label">Dias disponiveis:</label> 
-                         
-                             <select id="idoraculo" name="idoraculo" class="custom-select" required>
-        <option value="">Escolha um dia com vagas</option>
-                         
-                         <?php
-                          
-while($giras=mysqli_fetch_array($selecionaGiras)){ 
-                              $id=$giras["id_oraculo"];
-                              
-                              $giravagas=$giras["vagas"];
-                          $selecionavagas=mysqli_query($conexao, "select count(*) from agendamentooraculo where id_oraculo=$id");
-                          $vagas=mysqli_fetch_array($selecionavagas);
-                          
-                          $vagasfim=$giravagas-$vagas["count(*)"];
-                          
-                                 if($anoatual>$giras['ano']){
-        continue;   
-      }if($mesatual>$giras['mes'] && $anoatual==$giras['ano']){
-        continue; 
-      }
-      if($mesatual==$giras['mes'] && $diaatual>$giras['dia']){
-        continue;  
-      }
-                          
-                          if($vagasfim>0){
-                          ?>
-
-                          <option value="<?php echo $giras["id_oraculo"];?>">
-                            <?php echo $giras['hora']." - ".$giras['dia']."/".$giras['mes']."/".$giras['ano']." - ".$vagasfim." Vagas";?>
-                          </option>
-
-      <?php }} ?>
-      
-    </select>
-    <div class="invalid-feedback">Informe um dia valido (com vagas)</div>
-    </div>
-    <br>
-                   
-
-				                     
-<button type="submit" class="btn btn-primary">Selecionar Oraculo</button><br>
-
-                  
-
-                  <br>
-				  
-				  
-               </form>
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1QZ23ue26pADN3tVtnOlCZremITRQJa202wbXefRLjh_k9PRZzReoFpvGef6dpDPIKQY7e-kOs?gv=true',
+      color: '#039BE5',
+      label: 'Agendar um compromisso',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
 
 
 </center>

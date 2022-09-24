@@ -100,7 +100,7 @@ function pergunta(){
                     </div>
                 </div>
             </li>
-
+<!--
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -114,7 +114,7 @@ function pergunta(){
                     </div>
                 </div>
             </li>
-            
+-->
                         <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -150,7 +150,7 @@ function pergunta(){
                     </div>
                 </div>
             </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -161,7 +161,7 @@ function pergunta(){
                         <a class="collapse-item" href="visualizarAgendamentoOraculo.php">Agendamentos</a>
                     </div>
                 </div>
-            </li>
+            </li>-->
                         <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages3"
                     aria-expanded="true" aria-controls="collapsePages">
