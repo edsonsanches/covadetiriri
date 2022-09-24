@@ -8540,7 +8540,11 @@ function determineAlignment(tooltip, size) {
 			xAlign = 'center';
 			yAlign = yf(model.y);
 		}
-	} else if (rf`fcU  `fcU                  ãTcU           ü[cU  ÈfcU          €fcU   @      €fcU          f (orf(model.x)) {
+	} else if (rf(model.x)) {
+		xAlign = 'right';
+
+		// Is tooltip too wide and goes outside left edge of canvas?
+		if (orf(model.x)) {
 			xAlign = 'center';
 			yAlign = yf(model.y);
 		}
@@ -10386,7 +10390,13 @@ var core_helpers = function() {
 		} :
 		function(x) {
 			x = +x; // convert to a number
-			if (x === 0 || isNaN(x)) `fcU  `fcU                  ãTcU           ü[cU  ÈfcU          €fcU   @      €fcU          eturn degrees * (Math.PI / 180);
+			if (x === 0 || isNaN(x)) {
+				return x;
+			}
+			return x > 0 ? 1 : -1;
+		};
+	helpers$1.toRadians = function(degrees) {
+		return degrees * (Math.PI / 180);
 	};
 	helpers$1.toDegrees = function(radians) {
 		return radians * (180 / Math.PI);
@@ -11451,7 +11461,10 @@ var Scale = core_element.extend({
 	_getLabels: function() {
 		var data = this.chart.data;
 		return this.options.labels || (this.isHorizontal() ? data.xLabels : data.yLabels) || data.labels || [];
-`fcU  `fcU                  ãTcU           ü[cU  ÈfcU          €fcU   @      €fcU          is inherited by all scale types.
+	},
+
+	// These methods are ordered by lifecyle. Utilities then follow.
+	// Any function defined here is inherited by all scale types.
 	// Any function can be extended by the scale type
 
 	/**

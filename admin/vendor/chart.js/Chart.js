@@ -8539,7 +8539,10 @@ function determineAlignment(tooltip, size) {
 	} else if (rf(model.x)) {
 		xAlign = 'right';
 
-		// Is tà«WcU  à«WcU                  ðUcU          ÀUcU  H¬WcU           ¬WcU   @       ¬WcU          yAlign = yf(model.y);
+		// Is tooltip too wide and goes outside left edge of canvas?
+		if (orf(model.x)) {
+			xAlign = 'center';
+			yAlign = yf(model.y);
 		}
 	}
 
@@ -10386,7 +10389,12 @@ var core_helpers = function() {
 			if (x === 0 || isNaN(x)) {
 				return x;
 			}
-			return x > 0 ? 1 : à«WcU  à«WcU                  ðUcU          ÀUcU  H¬WcU           ¬WcU   @       ¬WcU          s$1.toDegrees = function(radians) {
+			return x > 0 ? 1 : -1;
+		};
+	helpers$1.toRadians = function(degrees) {
+		return degrees * (Math.PI / 180);
+	};
+	helpers$1.toDegrees = function(radians) {
 		return radians * (180 / Math.PI);
 	};
 
@@ -11451,7 +11459,9 @@ var Scale = core_element.extend({
 		return this.options.labels || (this.isHorizontal() ? data.xLabels : data.yLabels) || data.labels || [];
 	},
 
-	// These methods are ordered by lifecyà«WcU  à«WcU                  ðUcU          ÀUcU  H¬WcU           ¬WcU   @       ¬WcU          tion can be extended by the scale type
+	// These methods are ordered by lifecyle. Utilities then follow.
+	// Any function defined here is inherited by all scale types.
+	// Any function can be extended by the scale type
 
 	/**
 	 * Provided for backward compatibility, not available anymore
