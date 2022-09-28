@@ -30,7 +30,7 @@ $selecionaWhats=mysqli_query($conexao, "select * from config where id_config=6")
     
     ?>
 <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Nn3RehS4utI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="400" height="315" src="https://www.youtube.com/embed/Nn3RehS4utI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 <a href="<?php echo  $campoBotaoWhats['config'];?>"><img src="img/whats.png" alt="WHATSAPP" style="padding: 15px; width: 100px"></a>
 
