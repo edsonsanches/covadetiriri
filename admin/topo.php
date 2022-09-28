@@ -100,7 +100,7 @@ function pergunta(){
                     </div>
                 </div>
             </li>
-<!--
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -109,12 +109,12 @@ function pergunta(){
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="CadOraculo.php">Oraculo</a>
+                        <!--<a class="collapse-item" href="CadOraculo.php">Oraculo</a>-->
                         <a class="collapse-item" href="CadTextoOraculo.php">Texto</a>
                     </div>
                 </div>
             </li>
--->
+
                         <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree"
                     aria-expanded="true" aria-controls="collapseTwo">
