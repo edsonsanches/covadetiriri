@@ -14,7 +14,7 @@ if(strlen($idmp)==11){
 }
 
 // Adicione as credenciais
-MercadoPago\SDK::setAccessToken('APP_USR-440037163017176-111322-87eb2db3a07461fc948b9da6da960111-205718711');
+MercadoPago\SDK::setAccessToken('APP_USR-4757443602507802-100115-5ce1917ce9c6e885352c7b95b5754f01-6306260');
         
            $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
            // Get the payment and the corresponding merchant_order reported by the IPN.
